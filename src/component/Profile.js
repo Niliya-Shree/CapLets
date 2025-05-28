@@ -31,7 +31,7 @@ function Profile({ darkMode }) {
       <h2 className='mt-2'>Enter your text here :</h2>
 
       <div className='py-3'>
-        <textarea value={text} onChange={handleChange} rows={6} cols={70} className="p-4 border rounded "></textarea>
+        <textarea value={text} onChange={handleChange} rows={6} cols={70} className={`p-4 border rounded textarea ${darkMode ? 'textarea-dark' : ''}`}></textarea>
       </div>
 
       <Button onClick={handleUpperClick} onChange={handleChange} variant="primary" className='mx-1'>Convert to UpperCase</Button>
