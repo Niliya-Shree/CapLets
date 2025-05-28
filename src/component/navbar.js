@@ -3,11 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import PropTypes from 'prop-types';
 
-function NavScrollExample({title = 'default'}) {
+function NavScrollExample({title, darkMode, setDarkMode}) {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className={`navbar ${darkMode ? 'dark-navbar' : ''}`}>
       <Container fluid>
         <Navbar.Brand href="#">{title}</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -29,16 +28,19 @@ function NavScrollExample({title = 'default'}) {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" >Search</Button>
+              <Form.Check 
+              type="switch"
+              id="custom-switch"
+              label={darkMode ? 'Light mode' : 'Dark mode'}
+              className='mx-2'
+              onChange={() => setDarkMode(prev => !prev)}
+            />
           </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
-
-NavScrollExample.propTypes = {
-  title: PropTypes.string.isRequired
-};
 
 export default NavScrollExample;

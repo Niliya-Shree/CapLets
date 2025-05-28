@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 
-
-function Profile() {
+function Profile({ darkMode }) {
 
   const [text, setText] = useState("before the click")
 
-  const handleUpperClick = ()=>{
+  const handleUpperClick = ()=>{                            
     let newText = text.toUpperCase();
     setText(newText)
     console.log("after click")
@@ -27,8 +26,7 @@ function Profile() {
   }
 
   return (
-    <>
-    <div className='container'>
+    <div className={`container profile-page ${darkMode ? 'dark' : ''}`}>
 
       <h2 className='mt-2'>Enter your text here :</h2>
 
@@ -46,7 +44,6 @@ function Profile() {
       <h2 className='py-3'>Preview</h2>
       <p>{text.length>0?text:"Enter some text above to preview it here."}</p>
     </div>
-    </>
   )
 }
 
