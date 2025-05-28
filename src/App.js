@@ -9,15 +9,13 @@ function App() {
   document.body.className = darkMode ? 'dark' : ''; 
 
   return (
-    // <div className={`${darkMode ? 'dark' : ''}`}>
-<div>
+    <div>
       {/*changes navbar color*/}
       <NavScrollExample title="CapLets" darkMode={darkMode} setDarkMode={setDarkMode}/> 
 
       {/*changes Profile(textarea) color*/}
       <Profile darkMode={darkMode}/>
-</div>
-    // </div>
+    </div>
   );
 }
 
