@@ -1,18 +1,20 @@
 import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 
-function Profile({ darkMode }) {
+function Profile({ darkMode, showAlert }) {
 
   const [text, setText] = useState("before the click")
 
   const handleUpperClick = ()=>{                            
     let newText = text.toUpperCase();
     setText(newText)
+    showAlert("Capitalized text", "success")
     console.log("after click")
   }
   const handleLowerClick = ()=>{
     let newText = text.toLowerCase();
     setText(newText)
+    showAlert("Converted to Lower Case text", "success")
     console.log("after click")
   }
   const handleChange = (event)=>{
@@ -22,6 +24,7 @@ function Profile({ darkMode }) {
   const handleClearClick = ()=>{
     let newText = '';
     setText(newText)
+    showAlert("Cleared text","success")
     console.log("after click")
   }
 
